@@ -1,0 +1,36 @@
+package com.mtit.communicationcenter;
+
+import java.util.ArrayList;
+
+import java.util.Scanner;
+
+public class ServicesImpl {
+	private static int StationarySubTotal = 0;
+	private static int totalAmount = 0;
+	private int Services[] = new int[5];
+	
+	
+	
+	private static ArrayList<Object> Stationaries = new ArrayList<>();
+	
+	public static int chooseServiceType() {
+		System.out.println("code\tService");
+		System.out.println("1\tStationary Service ");
+		System.out.println("2\tReload Service ");
+		System.out.println("3\tGraphic Service ");
+		System.out.println("4\tBrowsing and Gaming  Service ");
+		System.out.println("5\tCD Service ");
+		System.out.println("6\tPrinting Service ");
+		System.out.println("7\tPhotoCopy Service ");
+		System.out.println("8\tScanning Service ");
+		
+		System.out.println();
+		Scanner input = new Scanner(System.in);
+		System.out.println("Enter the code of the service you need to Procead : ");
+		int x = input.nextInt();
+		
+		return x;
+	
+
+}
+}

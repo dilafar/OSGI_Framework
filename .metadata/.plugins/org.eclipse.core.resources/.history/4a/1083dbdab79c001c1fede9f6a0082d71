@@ -1,0 +1,393 @@
+package com.mtit.communicationcenter;
+
+import java.util.ArrayList;
+
+import java.util.Scanner;
+import com.mtit.stationary_service.*;
+
+public class ServicesImpl {
+	private static int StationarySubTotal = 0;
+	private static int totalAmount = 0;
+	private static String stationary;
+	private int Services[] = new int[5];
+	
+	
+	
+	private static ArrayList<Object> Stationaries = new ArrayList<>();
+	
+	public static int chooseServiceType() {
+		System.out.println("code\tService");
+		System.out.println("1\tStationary Service ");
+		System.out.println("2\tReload Service ");
+		System.out.println("3\tGraphic Service ");
+		System.out.println("4\tBrowsing and Gaming  Service ");
+		System.out.println("5\tCD Service ");
+		System.out.println("6\tPrinting Service ");
+		System.out.println("7\tPhotoCopy Service ");
+		System.out.println("8\tScanning Service ");
+		
+		System.out.println();
+		Scanner input = new Scanner(System.in);
+		System.out.println("Enter the code of the service you need to Procead : ");
+		int x = input.nextInt();
+		
+		return x;
+	
+
+}
+	public static void StationaryService(Stationary stationary) {
+		Scanner input = new Scanner(System.in);
+		
+		do {
+			stationary.DisplayStationeries();
+			System.out.println();
+			System.out.println();
+			System.out.println("Enter the code of Stationary Item you need to Purchase ? ");
+			int code = input.nextInt();
+			if(code == 1) {
+				Stationaries.add("A4Paper-White");
+				System.out.println("How many A4Papers do you need to purchase ?");
+				int Qty = input.nextInt();
+				Stationaries.add(Qty);
+				StationarySubTotal = stationary.calculateBill(Qty, stationary.A4paper_white);
+				double calculateamount = (double)StationarySubTotal;
+				Stationaries.add(calculateamount);
+				totalAmount += StationarySubTotal;
+				
+			}else if(code == 2) {
+				
+					Stationaries.add("A4Paper-Color");
+					System.out.println("How many A4Papers do you need to purchase ?");
+					int Qty = input.nextInt();
+					Stationaries.add(Qty);
+					StationarySubTotal = stationary.calculateBill(Qty, stationary.A4paper_color);
+					double calculateamount = (double)StationarySubTotal;
+					Stationaries.add(calculateamount);
+					totalAmount += StationarySubTotal;	
+				
+			}else if(code == 3) {
+				
+				Stationaries.add("Scissores");
+				System.out.println("How many Scissores do you need to purchase ?");
+				int Qty = input.nextInt();
+				Stationaries.add(Qty);
+				StationarySubTotal = stationary.calculateBill(Qty, stationary.Scisores);
+				double calculateamount = (double)StationarySubTotal;
+				Stationaries.add(calculateamount);
+				totalAmount += StationarySubTotal;	
+				
+			}else if(code == 4) {
+				
+				Stationaries.add("Pencil");
+				System.out.println("How many Pencil do you need to purchase ?");
+				int Qty = input.nextInt();
+				Stationaries.add(Qty);
+				StationarySubTotal = stationary.calculateBill(Qty, stationary.Pencil);
+				double calculateamount = (double)StationarySubTotal;
+				Stationaries.add(calculateamount);
+				totalAmount += StationarySubTotal;	
+				
+			}else if(code == 5) {
+				
+				Stationaries.add("Erasor");
+				System.out.println("How many Erasor do you need to purchase ?");
+				int Qty = input.nextInt();
+				Stationaries.add(Qty);
+				StationarySubTotal = stationary.calculateBill(Qty, stationary.Erasor);
+				double calculateamount = (double)StationarySubTotal;
+				Stationaries.add(calculateamount);
+				totalAmount += StationarySubTotal;
+				
+			}else if(code == 6) {
+				
+				stationary.DisplayExerciseBookSingleRule();
+				System.out.println();
+				System.out.println();
+				System.out.println("Enter the code of ExerciseBooks  you need to Purchase ? ");
+				int code2 = input.nextInt();
+				
+				if(code2 == 1) {
+					Stationaries.add("ExerciseBook-80Page-SingleRule");
+					System.out.println("How many ExerciseBook-80Page do you need to purchase ?");
+					int Qty = input.nextInt();
+					Stationaries.add(Qty);
+					StationarySubTotal = stationary.calculateBill(Qty, stationary.ExerciseBook_80Page);
+					double calculateamount = (double)StationarySubTotal;
+					Stationaries.add(calculateamount);
+					totalAmount += StationarySubTotal;
+				}else if(code2 == 2) {
+					
+					Stationaries.add("ExerciseBook-120Page-SingleRule");
+					System.out.println("How many ExerciseBook-120Page do you need to purchase ?");
+					int Qty = input.nextInt();
+					Stationaries.add(Qty);
+					StationarySubTotal = stationary.calculateBill(Qty, stationary.ExerciseBook_120Page);
+					double calculateamount = (double)StationarySubTotal;
+					Stationaries.add(calculateamount);
+					totalAmount += StationarySubTotal;
+					
+				}else if(code2 == 3) {
+					
+					Stationaries.add("ExerciseBook-160Page-SingleRule");
+					System.out.println("How many ExerciseBook-160Page do you need to purchase ?");
+					int Qty = input.nextInt();
+					Stationaries.add(Qty);
+					StationarySubTotal = stationary.calculateBill(Qty, stationary.ExerciseBook_160Page);
+					double calculateamount = (double)StationarySubTotal;
+					Stationaries.add(calculateamount);
+					totalAmount += StationarySubTotal;
+					
+				}else if(code2 == 4) {
+					
+					Stationaries.add("ExerciseBook-200Page-SingleRule");
+					System.out.println("How many ExerciseBook-200Page do you need to purchase ?");
+					int Qty = input.nextInt();
+					Stationaries.add(Qty);
+					StationarySubTotal = stationary.calculateBill(Qty, stationary.ExerciseBook_200Page);
+					double calculateamount = (double)StationarySubTotal;
+					Stationaries.add(calculateamount);
+					totalAmount += StationarySubTotal;
+					
+				}else if(code2 == 5) {
+					
+					Stationaries.add("ExerciseBook-240Page-SingleRule");
+					System.out.println("How many ExerciseBook-240Page do you need to purchase ?");
+					int Qty = input.nextInt();
+					Stationaries.add(Qty);
+					StationarySubTotal = stationary.calculateBill(Qty, stationary.ExerciseBook_240Page);
+					double calculateamount = (double)StationarySubTotal;
+					Stationaries.add(calculateamount);
+					totalAmount += StationarySubTotal;
+					
+				}else if(code2 == 6) {
+					
+					Stationaries.add("CRBook-80Page-SingleRule");
+					System.out.println("How many CRBook-80Page do you need to purchase ?");
+					int Qty = input.nextInt();
+					Stationaries.add(Qty);
+					StationarySubTotal = stationary.calculateBill(Qty, stationary.CRBook_80page);
+					double calculateamount = (double)StationarySubTotal;
+					Stationaries.add(calculateamount);
+					totalAmount += StationarySubTotal;
+					
+				}else if(code2 == 7) {
+					
+					Stationaries.add("CRBook-120Page-SingleRule");
+					System.out.println("How many CRBook-120Page do you need to purchase ?");
+					int Qty = input.nextInt();
+					Stationaries.add(Qty);
+					StationarySubTotal = stationary.calculateBill(Qty, stationary.CRBook_120page);
+					double calculateamount = (double)StationarySubTotal;
+					Stationaries.add(calculateamount);
+					totalAmount += StationarySubTotal;
+					
+				}else if(code2 == 8) {
+					
+					Stationaries.add("CRBook-160Page-SingleRule");
+					System.out.println("How many CRBook-160Page do you need to purchase ?");
+					int Qty = input.nextInt();
+					Stationaries.add(Qty);
+					StationarySubTotal = stationary.calculateBill(Qty, stationary.CRBook_160page);
+					double calculateamount = (double)StationarySubTotal;
+					Stationaries.add(calculateamount);
+					totalAmount += StationarySubTotal;
+					
+				}else if(code2 == 9) {
+					
+					Stationaries.add("CRBook-200Page-SingleRule");
+					System.out.println("How many CRBook-200Page do you need to purchase ?");
+					int Qty = input.nextInt();
+					Stationaries.add(Qty);
+					StationarySubTotal = stationary.calculateBill(Qty, stationary.CRBook_200page);
+					double calculateamount = (double)StationarySubTotal;
+					Stationaries.add(calculateamount);
+					totalAmount += StationarySubTotal;
+					
+				}else if(code2 == 10) {
+					
+					Stationaries.add("CRBook-240Page-SingleRule");
+					System.out.println("How many CRBook-240Page do you need to purchase ?");
+					int Qty = input.nextInt();
+					Stationaries.add(Qty);
+					StationarySubTotal = stationary.calculateBill(Qty, stationary.CRBook_240page);
+					double calculateamount = (double)StationarySubTotal;
+					Stationaries.add(calculateamount);
+					totalAmount += StationarySubTotal;
+					
+				}
+				
+			}else if(code == 7) {
+				stationary.DisplayExerciseBookSqureRule();;
+				System.out.println();
+				System.out.println();
+				System.out.println("Enter the code of ExerciseBooks  you need to Purchase ? ");
+				int code3 = input.nextInt();
+				
+				if(code3 == 1) {
+					Stationaries.add("ExerciseBook-80Page-SquareRule");
+					System.out.println("How many ExerciseBook-80Page do you need to purchase ?");
+					int Qty = input.nextInt();
+					Stationaries.add(Qty);
+					StationarySubTotal = stationary.calculateBill(Qty, stationary.ExerciseBook_80Page);
+					double calculateamount = (double)StationarySubTotal;
+					Stationaries.add(calculateamount);
+					totalAmount += StationarySubTotal;
+				}else if(code3 == 2) {
+					
+					Stationaries.add("ExerciseBook-120Page-SquareRule");
+					System.out.println("How many ExerciseBook-120Page do you need to purchase ?");
+					int Qty = input.nextInt();
+					Stationaries.add(Qty);
+					StationarySubTotal = stationary.calculateBill(Qty, stationary.ExerciseBook_120Page);
+					double calculateamount = (double)StationarySubTotal;
+					Stationaries.add(calculateamount);
+					totalAmount += StationarySubTotal;
+					
+				}else if(code3 == 3) {
+					
+					Stationaries.add("ExerciseBook-160Page-SquareRule");
+					System.out.println("How many ExerciseBook-160Page do you need to purchase ?");
+					int Qty = input.nextInt();
+					Stationaries.add(Qty);
+					StationarySubTotal = stationary.calculateBill(Qty, stationary.ExerciseBook_160Page);
+					double calculateamount = (double)StationarySubTotal;
+					Stationaries.add(calculateamount);
+					totalAmount += StationarySubTotal;
+					
+				}else if(code3 == 4) {
+					
+					Stationaries.add("ExerciseBook-200Page-SquareRule");
+					System.out.println("How many ExerciseBook-200Page do you need to purchase ?");
+					int Qty = input.nextInt();
+					Stationaries.add(Qty);
+					StationarySubTotal = stationary.calculateBill(Qty, stationary.ExerciseBook_200Page);
+					double calculateamount = (double)StationarySubTotal;
+					Stationaries.add(calculateamount);
+					totalAmount += StationarySubTotal;
+					
+				}else if(code3 == 5) {
+					
+					Stationaries.add("ExerciseBook-240Page-SquareRule");
+					System.out.println("How many ExerciseBook-240Page do you need to purchase ?");
+					int Qty = input.nextInt();
+					Stationaries.add(Qty);
+					StationarySubTotal = stationary.calculateBill(Qty, stationary.ExerciseBook_240Page);
+					double calculateamount = (double)StationarySubTotal;
+					Stationaries.add(calculateamount);
+					totalAmount += StationarySubTotal;
+					
+				}else if(code3 == 6) {
+					
+					Stationaries.add("CRBook-80Page-SquareRule");
+					System.out.println("How many CRBook-80Page do you need to purchase ?");
+					int Qty = input.nextInt();
+					Stationaries.add(Qty);
+					StationarySubTotal = stationary.calculateBill(Qty, stationary.CRBook_80page);
+					double calculateamount = (double)StationarySubTotal;
+					Stationaries.add(calculateamount);
+					totalAmount += StationarySubTotal;
+					
+				}else if(code3 == 7) {
+					
+					Stationaries.add("CRBook-120Page-SquareRule");
+					System.out.println("How many CRBook-120Page do you need to purchase ?");
+					int Qty = input.nextInt();
+					Stationaries.add(Qty);
+					StationarySubTotal = stationary.calculateBill(Qty, stationary.CRBook_120page);
+					double calculateamount = (double)StationarySubTotal;
+					Stationaries.add(calculateamount);
+					totalAmount += StationarySubTotal;
+					
+				}else if(code3 == 8) {
+					
+					Stationaries.add("CRBook-160Page-SquareRule");
+					System.out.println("How many CRBook-160Page do you need to purchase ?");
+					int Qty = input.nextInt();
+					Stationaries.add(Qty);
+					StationarySubTotal = stationary.calculateBill(Qty, stationary.CRBook_160page);
+					double calculateamount = (double)StationarySubTotal;
+					Stationaries.add(calculateamount);
+					totalAmount += StationarySubTotal;
+					
+				}else if(code3 == 9) {
+					
+					Stationaries.add("CRBook-200Page-SquareRule");
+					System.out.println("How many CRBook-200Page do you need to purchase ?");
+					int Qty = input.nextInt();
+					Stationaries.add(Qty);
+					StationarySubTotal = stationary.calculateBill(Qty, stationary.CRBook_200page);
+					double calculateamount = (double)StationarySubTotal;
+					Stationaries.add(calculateamount);
+					totalAmount += StationarySubTotal;
+					
+				}else if(code3 == 10) {
+					
+					Stationaries.add("CRBook-240Page-SquareRule");
+					System.out.println("How many CRBook-240Page do you need to purchase ?");
+					int Qty = input.nextInt();
+					Stationaries.add(Qty);
+					StationarySubTotal = stationary.calculateBill(Qty, stationary.CRBook_240page);
+					double calculateamount = (double)StationarySubTotal;
+					Stationaries.add(calculateamount);
+					totalAmount += StationarySubTotal;
+					}
+			   }else if(code == 8) {
+				   
+				    stationary.NoteBook();
+					System.out.println();
+					System.out.println();
+					System.out.println("Enter the code of NoteBook you need to Purchase ? ");
+					int code4 = input.nextInt();
+					
+					if(code4 == 1) {
+						
+						Stationaries.add("NoteBook-40Page");
+						System.out.println("How many NoteBook-40Page do you need to purchase ?");
+						int Qty = input.nextInt();
+						Stationaries.add(Qty);
+						StationarySubTotal = stationary.calculateBill(Qty, stationary.NoteBook_40page);
+						double calculateamount = (double)StationarySubTotal;
+						Stationaries.add(calculateamount);
+						totalAmount += StationarySubTotal;
+						
+					}else if(code4 == 2) {
+						
+						Stationaries.add("NoteBook-80Page");
+						System.out.println("How many NoteBook-80Page do you need to purchase ?");
+						int Qty = input.nextInt();
+						Stationaries.add(Qty);
+						StationarySubTotal = stationary.calculateBill(Qty, stationary.NoteBook_80page);
+						double calculateamount = (double)StationarySubTotal;
+						Stationaries.add(calculateamount);
+						totalAmount += StationarySubTotal;
+						
+					}else if(code4 == 3) {
+						
+						Stationaries.add("NoteBook-120Page");
+						System.out.println("How many NoteBook-120Page do you need to purchase ?");
+						int Qty = input.nextInt();
+						Stationaries.add(Qty);
+						StationarySubTotal = stationary.calculateBill(Qty, stationary.NoteBook_120page);
+						double calculateamount = (double)StationarySubTotal;
+						Stationaries.add(calculateamount);
+						totalAmount += StationarySubTotal;
+					}
+					
+					
+			  }else if (code == 9) {
+			    	   
+				    stationary.AtlesPen();
+					System.out.println();
+					System.out.println();
+					System.out.println("Enter the code of Pen you need to Purchase ? ");
+					int code5 = input.nextInt();
+					
+					
+			   }
+			
+		}while();
+		
+		
+		
+	}
+}

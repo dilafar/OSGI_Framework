@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: OSGI_Communication_Center
+Bundle-SymbolicName: OSGI_Communication_Center
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.mtit.communicationcenter.Activator
+Export-Package: com.mtit.communicationcenter
+Import-Package: cd_service,
+ com.mtit.stationary_service,
+ org.osgi.framework;version="1.3.0",
+ reload_service
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+

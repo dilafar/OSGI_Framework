@@ -1,0 +1,34 @@
+package reload_service;
+
+
+
+public class ReloadImpl implements Reload{
+
+	@Override
+	public void DisplayReloadCards() {
+		System.out.println("code\t\tItem");
+		System.out.println("1\tA4Paper-White\t");
+		System.out.println("2\tA4Paper-Color\t");
+		System.out.println("6\tScissores\t");
+		
+	}
+
+	@Override
+	public void DisplayDialogCards() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void DisplayHutchCards() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void DisplayMobitelCards() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

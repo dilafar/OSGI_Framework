@@ -1,0 +1,24 @@
+package com.mtit.user_service;
+
+import org.osgi.framework.BundleActivator;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.ServiceReference;
+
+
+
+
+public class UserActivator implements BundleActivator {
+	
+	ServiceReference serviceReference;
+	
+	public void start(BundleContext context) throws Exception {
+		System.out.println("User Service Starts...");
+		
+	}
+	
+
+	public void stop(BundleContext context) throws Exception {
+		
+	}
+
+}

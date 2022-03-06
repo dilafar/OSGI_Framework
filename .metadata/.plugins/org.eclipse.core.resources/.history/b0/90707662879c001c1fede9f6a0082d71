@@ -1,0 +1,21 @@
+package com.mtit.osgi_communication_center;
+
+import org.osgi.framework.BundleActivator;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.ServiceRegistration;
+
+public class Activator implements BundleActivator {
+
+	
+
+	ServiceRegistration serviceRegister;
+
+	public void start(BundleContext context) throws Exception {
+		System.out.println("Communication Center Starts...");
+	}
+
+	public void stop(BundleContext context) throws Exception {
+		System.out.println("Communication Center Ends...");
+	}
+
+}

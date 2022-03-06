@@ -1,0 +1,35 @@
+package com.mtit.user_service;
+
+import org.osgi.framework.BundleActivator;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.ServiceReference;
+
+import com.mtit.communicationcenter.*;
+import com.mtit.stationary_service.*;
+
+
+
+public class UserActivator implements BundleActivator {
+	
+	ServiceReference serviceReference;
+	
+	
+	public void start(BundleContext context) throws Exception {
+		System.out.println("User Service Starts...");
+		do {
+			int select = ServicesImpl.chooseServiceType();
+			if (select == 1) {
+				serviceReference = context.getServiceReference(Stationary.class.getName());
+				Stationary stationary = (Stationary)context.getService(serviceReference);
+				
+			}
+		}while();
+		
+	}
+	
+
+	public void stop(BundleContext context) throws Exception {
+		
+	}
+
+}

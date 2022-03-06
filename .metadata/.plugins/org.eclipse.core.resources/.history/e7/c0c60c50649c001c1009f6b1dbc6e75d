@@ -1,0 +1,5 @@
+package com.mtit.osgi_communication_center;
+
+public class ServicesImpl {
+
+}

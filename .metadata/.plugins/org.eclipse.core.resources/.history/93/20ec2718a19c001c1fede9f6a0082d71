@@ -1,0 +1,111 @@
+package com.mtit.communicationcenter;
+
+import java.util.ArrayList;
+
+import java.util.Scanner;
+import com.mtit.stationary_service.*;
+
+public class ServicesImpl {
+	private static int StationarySubTotal = 0;
+	private static int totalAmount = 0;
+	private static String stationary;
+	private int Services[] = new int[5];
+	
+	
+	
+	private static ArrayList<Object> Stationaries = new ArrayList<>();
+	
+	public static int chooseServiceType() {
+		System.out.println("code\tService");
+		System.out.println("1\tStationary Service ");
+		System.out.println("2\tReload Service ");
+		System.out.println("3\tGraphic Service ");
+		System.out.println("4\tBrowsing and Gaming  Service ");
+		System.out.println("5\tCD Service ");
+		System.out.println("6\tPrinting Service ");
+		System.out.println("7\tPhotoCopy Service ");
+		System.out.println("8\tScanning Service ");
+		
+		System.out.println();
+		Scanner input = new Scanner(System.in);
+		System.out.println("Enter the code of the service you need to Procead : ");
+		int x = input.nextInt();
+		
+		return x;
+	
+
+}
+	public static void StationaryService(Stationary stationary) {
+		Scanner input = new Scanner(System.in);
+		
+		do {
+			stationary.DisplayStationeries();
+			System.out.println();
+			System.out.println();
+			System.out.println("Enter the code of Stationary Item you need to Purchase ? ");
+			int code = input.nextInt();
+			if(code == 1) {
+				Stationaries.add("A4Paper-White");
+				System.out.println("How many A4Papers do you need to purchase ?");
+				int Qty = input.nextInt();
+				Stationaries.add(Qty);
+				StationarySubTotal = stationary.calculateBill(Qty, stationary.A4paper_white);
+				double calculateamount = (double)StationarySubTotal;
+				Stationaries.add(calculateamount);
+				totalAmount += StationarySubTotal;
+				
+			}else if(code == 2) {
+				
+					Stationaries.add("A4Paper-Color");
+					System.out.println("How many A4Papers do you need to purchase ?");
+					int Qty = input.nextInt();
+					Stationaries.add(Qty);
+					StationarySubTotal = stationary.calculateBill(Qty, stationary.A4paper_color);
+					double calculateamount = (double)StationarySubTotal;
+					Stationaries.add(calculateamount);
+					totalAmount += StationarySubTotal;	
+				
+			}else if(code == 3) {
+				
+				Stationaries.add("Scissores");
+				System.out.println("How many Scissores do you need to purchase ?");
+				int Qty = input.nextInt();
+				Stationaries.add(Qty);
+				StationarySubTotal = stationary.calculateBill(Qty, stationary.Scisores);
+				double calculateamount = (double)StationarySubTotal;
+				Stationaries.add(calculateamount);
+				totalAmount += StationarySubTotal;	
+				
+			}else if(code == 4) {
+				
+				Stationaries.add("Pencil");
+				System.out.println("How many Pencil do you need to purchase ?");
+				int Qty = input.nextInt();
+				Stationaries.add(Qty);
+				StationarySubTotal = stationary.calculateBill(Qty, stationary.Pencil);
+				double calculateamount = (double)StationarySubTotal;
+				Stationaries.add(calculateamount);
+				totalAmount += StationarySubTotal;	
+				
+			}else if(code == 5) {
+				
+				Stationaries.add("Erasor");
+				System.out.println("How many Erasor do you need to purchase ?");
+				int Qty = input.nextInt();
+				Stationaries.add(Qty);
+				StationarySubTotal = stationary.calculateBill(Qty, stationary.Erasor);
+				double calculateamount = (double)StationarySubTotal;
+				Stationaries.add(calculateamount);
+				totalAmount += StationarySubTotal;
+				
+			}else if(code == 6) {
+				
+				
+			}
+			
+		}while();
+		
+		
+		
+	}
+}
